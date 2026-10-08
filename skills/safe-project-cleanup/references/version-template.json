@@ -1,0 +1,41 @@
+{
+  "mode": "current-and-rollback",
+  "single_version_authorized": false,
+  "identity": {"project": "填写工程身份", "line": "填写主线", "hardware": "填写硬件或软件目标"},
+  "reference_roots": ["D:\\填写保留版本", "D:\\填写其他已知引用工程"],
+  "reference_scope_confirmed": false,
+  "versions": [
+    {
+      "path": "D:\\填写版本集合\\project_v1",
+      "identity": {"project": "填写工程身份", "line": "填写主线", "hardware": "填写硬件或软件目标"},
+      "current": false,
+      "stable_evidence": null,
+      "active": false,
+      "frozen": false,
+      "keep": false,
+      "inactive_evidence": null,
+      "independent_retained_evidence": null,
+      "obsolete_implementation_authorized": false,
+      "local_history_reviewed": false,
+      "preserved_files": {}
+    },
+    {
+      "path": "D:\\填写版本集合\\project_v3",
+      "identity": {"project": "填写工程身份", "line": "填写主线", "hardware": "填写硬件或软件目标"},
+      "current": false,
+      "stable_evidence": "填写已经验证的回退证据，不能只写 stable 名称",
+      "active": false,
+      "frozen": false,
+      "keep": true
+    },
+    {
+      "path": "D:\\填写版本集合\\project_v4",
+      "identity": {"project": "填写工程身份", "line": "填写主线", "hardware": "填写硬件或软件目标"},
+      "current": true,
+      "stable_evidence": null,
+      "active": true,
+      "frozen": false,
+      "keep": true
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+name: Windows tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  behavior-and-distribution:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.11'
+      - name: Behavioral tests (34 scenarios)
+        shell: pwsh
+        run: |
+          python -B -X utf8 tests/test_cleanup.py --script skills/safe-project-cleanup/scripts/cleanup.py --workspace "$env:RUNNER_TEMP\cleanup-behavior"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Package release skill
+        shell: pwsh
+        run: |
+          python -B -X utf8 tools/package_release.py --out "$env:RUNNER_TEMP\cleanup-package"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Installed ZIP and CLI integration
+        shell: pwsh
+        run: |
+          python -B -X utf8 tests/test_distribution.py --package "$env:RUNNER_TEMP\cleanup-package\safe-project-cleanup-v0.1.0.zip" --workspace "$env:RUNNER_TEMP\cleanup-distribution"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

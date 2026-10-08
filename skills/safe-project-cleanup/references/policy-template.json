@@ -1,0 +1,16 @@
+{
+  "policy_id": "填写工程独立策略ID",
+  "status": "PAUSED",
+  "authorization_source": null,
+  "roots": ["D:\\填写已确认工程根"],
+  "resource_classes": ["A"],
+  "purposes": ["derived"],
+  "actions": ["archive"],
+  "permanent_delete": false,
+  "protected_paths": ["D:\\填写已确认工程根\\src", "D:\\填写已确认工程根\\evidence"],
+  "idle_rule": "执行前核对当前任务、构建、服务及占用；未知或活跃就跳过",
+  "max_bytes": 1073741824,
+  "version_mode": "current-and-rollback",
+  "revocation": "改为 REVOKED 或移走本策略文件；不再执行",
+  "note": "本模板未获批准。整个旧版本和永久删除需单独明确包含对应类型、精确范围与真实用户授权。"
+}
