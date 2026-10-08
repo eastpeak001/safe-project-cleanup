@@ -36,6 +36,8 @@ Windows side，使用 $safe-project-cleanup。
 
 ## 工具参数
 
+示例中的 `py -3.11` 显式选择 Python 3.11。如果本机只安装了其他受支持版本，例如 3.12，可改用 `py -3.12`；也可使用指向 Python 3.11+ 的 `python` 命令或解释器完整路径。先用 `--version` 确认版本，不需要为了这些示例重复安装 Python。
+
 ```powershell
 # 路径仅为示例；替换为实际安装、工程和工作目录。
 $script = Join-Path $env:USERPROFILE '.agents\skills\safe-project-cleanup\scripts\cleanup.py'

@@ -26,6 +26,10 @@ updating it. If Codex does not discover the skill automatically, restart it.
 Requirements: Windows local drives and Python 3.11+. Installed Git is needed for Git
 repository evidence. No Python runtime dependencies.
 
+PowerShell examples use `py -3.11`. If you have another supported Python version,
+select it with the launcher (for example, `py -3.12`), or use its full executable path.
+Check `--version` first; Python 3.11 is not the only supported interpreter.
+
 ## Start with inventory
 
 ```text
